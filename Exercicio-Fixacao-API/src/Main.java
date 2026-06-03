@@ -7,11 +7,14 @@ void main() {
     // to see how IntelliJ IDEA suggests fixing it.
     String dados = """
             {
-            "nome": "Vitor Hugo",
-            "idade": "20",
-            "cidade": "Porto Alegre" }
+            "nome": "Robin Hood",
+            "autor": "Vitor Hugo",
+            "editora": { "nome" : "Editora Porto Alegre",
+             "cidade": "Porto Alegre"
+             }
+             }
             """;
     Gson gson =  new Gson();
-    Pessoa pessoa = gson.fromJson(dados, Pessoa.class);
-    IO.println(pessoa);
+    Livro livro = gson.fromJson(dados, Livro.class);
+    IO.println(livro.toString());
 }
